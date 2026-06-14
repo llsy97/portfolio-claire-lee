@@ -5,28 +5,44 @@
   background-color: #EEEBE1;
 }
 
+@font-face {
+    font-family: 'Cafe24MeongiBlack';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Meongi-B-v1.0.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 header {
-    padding: 36px 140px;
+    padding: 16px 160px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
 }
 
 .logo {
     display: flex;
 }
 
+.logo a {
+    text-decoration: none;
+}
+
 .menu {
     display: flex;
-    gap: 48px;
+    gap: 44px;
     margin-left: 400px;
 }
 
 .menu a {
     display: relative;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
+    font-family: 'Cafe24MeongiBlack', sans-serif;
+    font-weight: normal;
+    font-size: 25px;
     text-decoration: none;
     color: black;
     padding: 24px;
@@ -41,6 +57,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-left: 8px;
     gap: 12px;
 }
 
@@ -54,9 +71,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    padding: 100px 160px;
     gap: 40px;
     justify-content: center;
-    min-height: 75vh;
+    min-height: 55vh;
 }
 
 .mainphrase {
@@ -83,4 +101,163 @@ header {
 
 .profilepic img:hover {
     transform: translateY(-5px);
+}
+
+.about {
+    min-height: 100vh;
+    padding: 150px 120px;
+}
+
+.abouttitle {
+    font-family: 'Cafe24MeongiBlack';
+    font-size: 52px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-intro {
+    border: 2px solid #6E563F;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-intro h2 {
+    color: #6E563F;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.about-intro p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.about-card {
+    border: 2px solid #6E563F;
+    border-radius: 20px;
+    padding: 25px;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-card h3 {
+    color: #6E563F;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    line-height: 1.6;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    padding: 36px 140px;
+}
+
+.contacttitle {
+    font-family: 'Cafe24MeongiBlack';
+    font-size: 52px;
+    font-weight: normal;
+}
+
+.contactmessage {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.contactrow {
+    display: flex;
+    gap: 20px;
+    width: 700px;
+    margin-top: 30px;
+}
+
+.inputgroup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputgroup label {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.inputgroup input {
+    padding: 15px;
+    border: 2px solid #6E563F;
+    border-radius: 12px;
+    background: transparent;
+}
+
+.contentbox {
+    width: 700px;
+    margin-top: 20px;
+}
+
+.contentbox textarea {
+    height: 180px;
+    padding: 15px;
+    border: 2px solid #6E563F;
+    border-radius: 12px;
+    resize: none;
+    background: transparent;
+    font-family: 'Arial', sans-serif;
+}
+
+.contactsubmit {
+    margin-top: 30px;
+    padding: 16px 36px;
+    background-color: #6E563F;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contactsubmit:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-wave {
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.footer-content {
+    position: absolute;
+    right: 120px;
+    bottom: 40px;
+    color: #EEEBE1;
+    background: transparent;
+    font-family: Arial, sans-serif;
 }
