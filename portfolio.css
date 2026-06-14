@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #EEEBE1;
+}
+
+header {
+    padding: 36px 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    gap: 48px;
+    margin-left: 400px;
+}
+
+.menu a {
+    display: relative;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #6E563F;
+}
+
+.contacticons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.contacticons img{
+    width: 35px;
+    height: 35px;
+    display: block;
+}
+
+.mainblock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    justify-content: center;
+    min-height: 75vh;
+}
+
+.mainphrase {
+    align-items: center;
+}
+
+.mainphrase h1 {
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    font-size: 110px;
+    color: #6E563F;
+}
+
+.mainphrase h2 {
+    font-family: "Arial Bold", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.profilepic img {
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.profilepic img:hover {
+    transform: translateY(-5px);
+}
