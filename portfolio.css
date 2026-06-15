@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #EEEBE1;
 }
 
 @font-face {
@@ -12,16 +11,56 @@
     font-display: swap;
 }
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900; /* Supports the full range of weights */
+  font-display: swap;
+  src: url('path-to-your-local-fonts/Inter-VariableFont_wght.woff2') format('woff2');
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 header {
-    padding: 16px 160px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 16px 5%;
     position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #EEEBE1;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+header.scrolled {
+    background-color: rgba(238, 235, 225, 0.9);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.08);
+}
+
+body{
+    background-color: #EEEBE1;
+}
+
+section {
+    scroll-margin-top: 110px;
+}
+
+.about,
+.skills,
+.projects,
+.contact {
+    min-height: auto;
+    padding: 80px 120px;
 }
 
 .logo {
@@ -55,10 +94,23 @@ header {
 
 .contacticons {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding-left: 8px;
     gap: 12px;
+}
+
+.contacticons a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.contacticons img {
+    width: 35px;
+    height: 35px;
+    transition: 0.3s;
+}
+
+.contacticons img:hover {
+    transform: scale(1.1);
 }
 
 .contacticons img{
@@ -71,7 +123,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 160px 160px;
+    padding: 160px 160px 120px 160px;
     gap: 40px;
     justify-content: center;
     min-height: 55vh;
@@ -104,21 +156,15 @@ header {
 }
 
 .about {
-    min-height: 100vh;
-    padding: 110px 120px;
-}
-
-.about-intro,
-.about-card
-{
-    background: transparent;
+    min-height: 100%;
+    padding: 36px 140px 120px 140px;
 }
 
 .abouttitle {
     font-family: 'Cafe24MeongiBlack';
     font-size: 52px;
     font-weight: normal;
-    color: black;
+    color: #6E563F;
     text-align: center;
     margin-bottom: 32px;
 }
@@ -129,12 +175,14 @@ header {
 }
 
 .about-intro {
-    border: 1px solid #6E563F;
+    background-color: #F5F1E8;
+    box-shadow: 0 20px 25px rgba(88, 71, 54, 0.08);
     border-radius: 28px;
     background-color: #F8F5EC;
     padding: 40px;
     margin-bottom: 30px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
 }
 
 .about-intro h2 {
@@ -155,11 +203,12 @@ header {
 }
 
 .about-card {
-    border: 1px solid #6E563F;
+    background-color: #F5F1E8;
+    box-shadow: 0 20px 25px rgba(88, 71, 54, 0.08);
     border-radius: 28px;
     background-color: #F8F5EC;
     padding: 25px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .about-card h3 {
@@ -172,14 +221,14 @@ header {
 }
 
 .skills {
-    min-height: 100vh;
-    padding: 100px 120px;
+    min-height: 100%;
+    padding: 36px 140px 120px 140px;
     background-color: #EEEBE1;
 }
 
 .skilltitle {
     text-align: center;
-    color: black;
+    color: #6E563F;
     margin-bottom: 60px;
     font-family: 'Cafe24MeongiBlack';
     font-size: 52px;
@@ -191,18 +240,10 @@ header {
     max-width: 1000px;
     margin: 0 auto;
     padding: 45px;
-
-    border: 0.5px solid #6E563F;
+    box-shadow: 0 20px 25px rgba(88, 71, 54, 0.08);
     border-radius: 28px;
     background-color: #F8F5EC;
-
-    font-family: 'Arial', sans-serif;
-}
-
-.skillrow,
-.skillrow h2,
-.skilltags {
-    background: transparent;
+    font-family: 'Inter', sans-serif;
 }
 
 .skillrow {
@@ -221,6 +262,25 @@ header {
     font-size: 22px;
 }
 
+.skilltags ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.skilltags li {
+    padding: 10px 18px;
+    border: 1.5px solid #6E563F;
+    border-radius: 50px;
+    color: #6E563F;
+    font-weight: bold;
+    background: transparent;
+}
+
 .skilltags {
     display: flex;
     flex-wrap: wrap;
@@ -231,7 +291,6 @@ header {
     padding: 10px 18px;
     border: 1.5px solid #6E563F;
     border-radius: 50px;
-
     color: #6E563F;
     font-weight: bold;
     font-size: 15px;
@@ -242,19 +301,108 @@ header {
     color: #EEEBE1;
 }
 
+.projects {
+    min-height: 100%;
+    padding: 36px 140px 120px 140px;
+    background-color: #EEEBE1;
+}
+
+.projecttitle {
+    font-family: 'Cafe24MeongiBlack';
+    font-size: 52px;
+    font-weight: normal;
+    color: #6E563F;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.projectgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.projectcard {
+    background-color: #F5F1E8;
+    box-shadow: 0 20px 25px rgba(88, 71, 54, 0.08);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectcard img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+.projectcard h2 {
+    color: #6E563F;
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-family: 'Cafe24MeongiBlack';
+    font-weight: normal;
+}
+
+.projectcard p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.projecttags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+
+}
+
+.projecttags span {
+    color: #6E563F;
+    font-weight: bold;
+}
+
+.projectcard button {
+    margin-top: auto;
+    width: fit-content;
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: #6E563F;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+}
+
+.projectcard button:hover {
+    transform: translateY(-5px);
+}
+
 .contact {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Arial', sans-serif;
-    padding: 36px 140px;
+    font-family: 'Inter', sans-serif;
+    padding: 36px 140px 0 140px;
 }
 
 .contacttitle {
     font-family: 'Cafe24MeongiBlack';
     font-size: 52px;
     font-weight: normal;
-    color: black;
+    color: #6E563F;
+    padding-bottom: 8px;
 }
 
 .contactmessage {
@@ -277,7 +425,7 @@ header {
 
 .inputgroup label {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -300,7 +448,7 @@ header {
     border-radius: 12px;
     resize: none;
     background: transparent;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .contactsubmit {
@@ -340,5 +488,5 @@ footer {
     bottom: 40px;
     color: #EEEBE1;
     background: transparent;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
